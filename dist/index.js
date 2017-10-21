@@ -1,5 +1,7 @@
-const Hapi = require('hapi');
-const server = new Hapi.Server();
+'use strict';
+
+var Hapi = require('hapi');
+var server = new Hapi.Server();
 server.connection({
   host: 'localhost',
   port: 8080
@@ -8,12 +10,12 @@ server.connection({
 server.route({
   method: 'GET',
   path: '/hello',
-  handler: function (request, reply) {
+  handler: function handler(request, reply) {
     return reply('hello world');
   }
 });
 // Test Checkin
-server.start((err) => {
+server.start(function (err) {
   if (err) {
     throw err;
   }
