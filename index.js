@@ -14,7 +14,7 @@ server.route({
 	return reply('hello world');
     }
 });
-
+// Test Checkin
 server.start((err) => {
     if (err) {
 	throw err;
